@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Footer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        html,body{
+            height: 100%;
+        }
+        #container{
+            min-height: 100%;
+        }
+        #main{
+            overflow: auto;
+            padding-bottom: 100px;
+        }
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .footer{
+            background-color: #38598b;
+            position: relative;
+            height: 200px;
+            margin-top: -100px;
+            clear:both;
+        }
+        .footerContainer{
+            width: 100%;
+            padding: 70px 30px 20px;
+        }
+        .socialIcons{
+            display: flex;
+            justify-content: center;
+        }
+        .socialIcons a{
+            text-decoration: none;
+            padding: 10px;
+            margin: 10px;
+            background-color:  #e7eaf6;
+            border-radius: 50%;
+        }
+        .socialIcons a i {
+            font-size: 2em;
+            color: black;
+            opacity: 0.9;
+        }
+        .socialIcons a:hover{
+            background-color: #38598b;
+            transition: 0.5s;
+        }
+        .socialIcons a:hover i{
+            color: #a2a8d3;
+            transition: 0.5;
+        }
+        .footerNav{
+            margin: 30px 0;
+        }
+        .footerNav ul{
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        .footerNav ul li a {
+            color: #e7eaf6;
+            margin: 20px;
+            text-decoration: none;
+            font-size: 1.3em;
+            opacity: 0.7;
+            transition: 0.5s;
+        }
+        .footerNav ul li a:hover{
+            opacity: 1;
+        }
+        footerBottom{
+            background-color: #38598b;
+            padding: 20px;
+            text-align: center;
+        }
+        .footerBottom p{
+            text-align: center;
+            color:#a2a8d3;
+        }
+        .designer{
+            opacity: 0.7;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 400;
+            margin: 0px 5px;
+        }
+        @media(max-width: 700px){
+            .footerNav ul{
+                flex-direction: column;
+            }
+            .footerNav ul li{
+                width: 100%;
+                text-align: center;
+                margin: 10px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+<div id="container">
+    <div id="main">
+
+    </div>
+</div>
+<footer id="footer">
+    <div class="footer content">
+        <div class="socialIcons" style="background-color:#38598b;">
+            <a href=""><i class="fa-brands fa-facebook"></i></a>
+            <a href=""><i class="fa-brands fa-instagram"></i></a>
+            <a href=""><i class="fa-brands fa-twitter"></i></a>
+            <a href=""><i class="fa-brands fa-youtube"></i></a>
+            <a href=""><i class="fa-brands fa-google-plus-g"></i></a>
+        </div>
+        <div class="footerNav">
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">News</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Contact Us</a></li>
+                <li><a href="">Our Team</a></li>
+            </ul>
+        </div>
+
+        <div class="footerBottom">
+            <p>Copyright &copy;2023; Design by <span class="designer">Ebru</span></p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
