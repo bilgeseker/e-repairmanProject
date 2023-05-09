@@ -14,7 +14,7 @@ $isler = $db->query("select * from isTablo")->fetchAll();
     <title>Sign Up</title>
     <!-- <base href="localhost/repairman/"> -->
 
-    
+
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
@@ -43,7 +43,21 @@ $isler = $db->query("select * from isTablo")->fetchAll();
                 <div class="row d-flex justify-content-center">
                     <div class="col-lg-8">
                         <h2 class="fw-bold mb-5">Sign up now</h2>
-                        <form method="post" action="kayit">
+                        <?php
+                        if ($kayitEkle) {
+                            echo '
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="alert alert-success" role="alert">
+                                          Registration Successful
+                                        </div>
+                                        <p><a href="giris" class="link-underline-primary">Log In</a></p>
+                                    </div>
+                                </div>
+                                ';
+                        }
+                        ?>
+                        <form method="post" action="http://localhost/repairman/repairman/kayit">
 
                             <div class="row">
 
@@ -112,7 +126,7 @@ $isler = $db->query("select * from isTablo")->fetchAll();
                             </div>
                             <div class="input-group mb-5">
                                 <label class="input-group-text" for="inputGroupSelect01"
-                                    style="background-color: #ebecf0;">City</label>
+                                    style="background-color: #ebecf0;">Job</label>
                                 <select class="form-select" id="is_id" name="is_id">
                                     <option value="">Select Job</option>
                                     <?php
@@ -122,27 +136,18 @@ $isler = $db->query("select * from isTablo")->fetchAll();
                                     ?>
                                 </select>
                             </div>
-
+                            <div class="form-outline mb-5">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="hakkimda" name="hakkimda">
+                                    <label for="floatingInput">About Me</label>
+                                </div>
+                            </div>
                             <!-- Submit button -->
                             <button type="submit" class="btn btn-block mb-4" name="kayit"
                                 style="background-color: #343c6d; color: #fff;">
                                 Sign up
                             </button>
                             <p><a href="giris" class="link-underline-primary">Log In</a></p>
-                            <?php
-                            if ($kayitEkle == 1) {
-                                echo '
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <div class="alert alert-success" role="alert">
-                                            Registration Successful
-                                            </div>
-                                        </div>
-                                    </div>
-                                    ';
-                            }
-
-                            ?>
 
                         </form>
                     </div>

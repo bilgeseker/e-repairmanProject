@@ -37,7 +37,7 @@
                 <div class="row d-flex justify-content-center">
                     <div class="col-lg-8">
                         <h2 class="fw-bold mb-5">Log In</h2>
-                        <form method="post" action="anasayfa/<?=$_SESSION["kullanici_id"]?>">
+                        <form method="post" action="">
                             <div class="row  d-flex justify-content-center">
                                 <!-- Mail input -->
                                 <div class="col-md-6 mb-4">
@@ -64,7 +64,8 @@
                                         style="background-color: #343c6d; color: #fff;">
                                         Log in
                                     </button>
-                                    <p><a href="kayit" class="link-underline-primary">Sign Up</a></p>
+                                    <p><a href="http://localhost/repairman/repairman/kayit" style="text-decoration:none; color: #343c6d;" class="link-underline-primary">Sign Up</a></p>
+                                    <p><a href="http://localhost/repairman/anasayfa" style="text-decoration:none; color: #343c6d;" class="link-underline-primary">Home Page</a></p>
                                 </div>
                             </div>
                         </form>

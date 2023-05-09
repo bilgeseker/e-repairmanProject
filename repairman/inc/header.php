@@ -8,6 +8,10 @@ $isler = $db->query("select * from isTablo")->fetchAll();
     <title>Handy Repair</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../styles/footer.css">
+    <link rel="stylesheet" href="../styles/mesaj.css">
+    <link rel="stylesheet" href="../styles/sidebar.css">
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -92,13 +96,12 @@ $isler = $db->query("select * from isTablo")->fetchAll();
                     ?>
                     <?php
                     if (isset($_SESSION["kullanici_id"])) {
-                        echo '<button type="button" class="btn btn-primary;" style="background-color: #e7eaf6;  border:solid; border-color:#a2a8d3;"><i class="fa-solid fa-bell"></i> Notifications <span class="badge bg-success">4</span></button>
-                        <button type="button" class="btn btn-primary;" style="background-color: #e7eaf6;  border:solid; border-color:#a2a8d3;"><i class="fa-brands fa-rocketchat"></i> Messages <span class="badge bg-danger">4</span></button>
+                        echo '<button type="button" class="btn btn-primary;" style="background-color: #e7eaf6;  border:solid; border-color:#a2a8d3;"><i class="fa-solid fa-bell"></i> Notifications</button>
+                        <button type="button" class="btn btn-primary;" style="background-color: #e7eaf6;  border:solid; border-color:#a2a8d3;"><i class="fa-brands fa-rocketchat"></i><a style="text-decoration:none; color:black;" href="http://localhost/repairman/mesaj/'.$_SESSION["kullanici_id"].'"> Messages</a></button>
                         <div class="btn-group">
                           <button type="button" class="btn btn-primary dropdown-toggle" style="background-color: #e7eaf6;  border:solid; color:black; border-color:#a2a8d3;" data-bs-toggle="dropdown"><i class="fa-solid fa-user"></i> Profile</button>
                           <ul class="dropdown-menu" style="background-color: #a2a8d3;">
-                            <li><a class="dropdown-item" href="#">Home</a></li>
-                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li><a class="dropdown-item" href="http://localhost/repairman/kullanici_profil/'.$_SESSION["kullanici_id"].'">Show Profile</a></li>
                             <li><a class="dropdown-item" href="cikis">Exit</a></li>
                           </ul>
                         </div>';

@@ -7,35 +7,27 @@ $menu = explode("/", rtrim(ltrim($_SERVER['REQUEST_URI'], "/"), "/"));
 if ($_POST) {
     if ($_POST["email"] != "" && $_POST["sifre"] != "") {
         if (isset($_POST["kayit"])) {
-            // $ad = $_POST['ad'];
-            // $soyad = $_POST['soyad'];
-            // $email = $_POST['email'];
-            // $sifre = $_POST['sifre'];
-            // $adres = $_POST['adres'];
-            // $telefon = $_POST['telefon'];
-            // $il = $_POST['il'];
+            $ad = $_POST['ad'];
+            $soyad = $_POST['soyad'];
+            $email = $_POST['email'];
+            $sifre = $_POST['sifre'];
+            $adres = $_POST['adres'];
+            $telefon = $_POST['telefon'];
+            $il = $_POST['il'];
 
-            $db_kayit = $db->prepare("insert into kullanici set ad = ':ad', soyad = ':soyad', 
-            email = ':email', sifre = ':sifre', adres = ':adres', telefon = ':telefon', il = ':il'");
-            $db_kayit->bindParam(":ad", $_POST['ad'], PDO::PARAM_STR);
-            $db_kayit->bindParam(":soyad", $_POST['soyad'], PDO::PARAM_STR);
-            $db_kayit->bindParam(":email", $_POST['email'], PDO::PARAM_STR);
-            $db_kayit->bindParam(":sifre", $_POST['sifre'], PDO::PARAM_STR);
-            $db_kayit->bindParam(":adres", $_POST['adres'], PDO::PARAM_STR);
-            $db_kayit->bindParam(":telefon", $_POST['telefon'], PDO::PARAM_STR);
-            $db_kayit->bindParam(":il", $_POST['il'], PDO::PARAM_STR);
-            $db_kayit->execute();
-        //     $query = "
-        // insert into kullanici set
-        // ad = '$ad',
-        // soyad = '$soyad',
-        // email = '$email',
-        // sifre = '$sifre',
-        // adres = '$adres',
-        // telefon = '$telefon',
-        // il = '$il'";
+            $query = "
+        insert into kullanici set
+        ad = '$ad',
+        soyad = '$soyad',
+        email = '$email',
+        sifre = '$sifre',
+        adres = '$adres',
+        telefon = '$telefon',
+        il = '$il'";
+
+
         
-            if ($db_kayit) {
+            if ($db->query($query)) {
                 $kayitEkle = 1;
             } else {
                 $kayitEkle = 0;
@@ -80,7 +72,7 @@ if ($menu[2] == "cikis") {
 
 //if(isset($_SESSION["kullanici_id"]) && time()-$_SESSION["login_time"] < 30*60){
 $_SESSION["login_time"] = time();
-if($menu[1]!="kayit" && $menu[1]!="giris"){
+if($menu[1]!="kayit" && $menu[1]!="giris" && $menu[1]!="hata"){
     require_once("inc/header.php");
 }
 if (strlen($menu[1]) > 0) {
@@ -94,7 +86,7 @@ if (strlen($menu[1]) > 0) {
 } else {
     require_once("anasayfa.php");
 }
-if($menu[1]!="kayit" && $menu[1]!="giris"){
+if($menu[1]!="kayit" && $menu[1]!="giris" && $menu[1]!="hata"){
 require_once("inc/footer.php");
 }
 /*} else{

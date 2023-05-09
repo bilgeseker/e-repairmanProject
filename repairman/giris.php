@@ -63,7 +63,8 @@
                                         style="background-color: #343c6d; color: #fff;">
                                         Log in
                                     </button>
-                                    <p><a href="kayit" class="link-underline-primary">Sign Up</a></p>
+                                    <p><a href="kayit" style="text-decoration:none; color: #343c6d;" class="link-underline-primary">Sign Up</a></p>
+                                    <p><a href="anasayfa" style="text-decoration:none; color: #343c6d;" class="link-underline-primary">Home Page</a></p>
                                 </div>
                             </div>
                         </form>

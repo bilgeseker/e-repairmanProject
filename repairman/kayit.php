@@ -1,34 +1,5 @@
 <?php
 $iller = $db->query("select * from iller")->fetchAll();
-
-// if ($_POST) {
-
-//     $ad = $_POST['ad'];
-//     $soyad = $_POST['soyad'];
-//     $email = $_POST['email'];
-//     $sifre = $_POST['sifre'];
-//     $adres = $_POST['adres'];
-//     $telefon = $_POST['telefon'];
-//     $il = $_POST['il'];
-
-//     $db_kayit = $db->exec("
-//         insert into kullanici set
-//         ad = '$ad',
-//         soyad = '$soyad',
-//         email = '$email',
-//         sifre = '$sifre',
-//         adres = '$adres',
-//         telefon = '$telefon',
-//         il = '$il'
-//     ");
-
-//     if ($db_kayit) {
-//         $kayitEkle = 1;
-//     } else {
-//         $kayitEkle = 0;
-//     }
-
-// }
 ?>
 <!doctype html>
 <html lang="en">
@@ -71,7 +42,21 @@ $iller = $db->query("select * from iller")->fetchAll();
                 <div class="row d-flex justify-content-center">
                     <div class="col-lg-8">
                         <h2 class="fw-bold mb-5">Sign up now</h2>
-                        <form method="post" action="kayit">
+                        <?php
+                        if ($kayitEkle) {
+                            echo '
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="alert alert-success" role="alert">
+                                          Registration Successful
+                                        </div>
+                                        <p><a href="giris" class="link-underline-primary">Log In</a></p>
+                                    </div>
+                                </div>
+                                ';
+                        }
+                        ?>
+                        <form method="post" action="http://localhost/repairman/kayit">
 
                             <div class="row">
 
@@ -145,21 +130,6 @@ $iller = $db->query("select * from iller")->fetchAll();
                                 Sign up
                             </button>
                             <p><a href="giris" class="link-underline-primary">Log In</a></p>
-                            <?php
-                            if ($kayitEkle == 1) {
-                                echo '
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <div class="alert alert-success" role="alert">
-                                            Registration Successful
-                                            </div>
-                                        </div>
-                                    </div>
-                                    ';
-                            }
-
-                            ?>
-
                         </form>
                     </div>
                 </div>
